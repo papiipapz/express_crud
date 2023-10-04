@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home Page</title>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+
+<body>
+
+
+<div id="table">
+  <table>
+    <thead> 
+      
+      <div id="userList">
+       <h1>User List</h1>
+      <p id="numUser">Number of Users: <%= userList.length %></p>
+    </div>
+
+      <a id="createUser" href="/insertuser"> Create User</a>
+
+      <div id="tablecontent">
+      <tr>
+        <th>Email</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% userList.forEach((user) => { %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.firstname %></td>
+        <td><%= user.lastname %></td>
+        <td><a href="/edituser/<%= user.id %>" class="edit-link">Edit</a></td>
+        <td><a href="/deleteuser/<%= user.id %>" class="edit-link">Delete</a></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </div>
+
+
+  </table>
+</div>    
+
+</body>
+
+</html>
