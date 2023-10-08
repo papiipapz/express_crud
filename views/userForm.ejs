@@ -1,15 +1,37 @@
-<form action="/saveUser"  method="POST">  
-    
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/form.css" />
+</head>
 
-    <label >Firstname</label>
-    <input style="margin: 10px;" type="text" placeholder="Firt Name" name="firstname" required >  
-    <br>
-    <label>Lastname</label>
-    <input style="margin: 10px;"  type="text" placeholder="Last Name" name="lastname" required >  
-    <br>
-    <label>Email</label>
-    <input style="margin: 10px;"  type="email" placeholder="Email" name="email" required >  
-    <br>
-    <button style="margin: 10px;"  type="submit">Submit</button>
-   
-</form>
+<body>
+
+<div class="wrapper">
+
+    <form class="form2" action="/saveUser" method="POST">
+
+        <table class="tableform">
+            <tr>
+                <td><label>First name</label></td>
+                <td><input type="text" placeholder="First Name" name="firstname" required></td>
+            </tr>
+
+            <tr>
+                <td><label>Last name</label></td>
+                <td><input type="text" placeholder="last Name" name="lastname" required></td>
+            </tr>
+
+            <tr>
+                <td><label>Email</label></td>
+                <td><input type="text" placeholder="email" name="email" required></td>
+            </tr>
+        </table>
+
+        <input class="formsubmit" type="submit"></input>
+
+
+    </form>
+
+
+
+</div>
+
+</body>

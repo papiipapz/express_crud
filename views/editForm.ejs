@@ -1,8 +1,36 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/editform.css" />
+</head>
+<body>
+<div class="wrapper">
 
-<h2>Edit form</h2>
-<form action="/updateuser" method="POST"> 
-    <input type="hidden" name="id" value="<%=user.id  %>">  
-    <input type="text" placeholder="firstname" name="firstname" value="<%=user.firstname %> ">  
-    <input type="text" placeholder="lastname" name="lastname" value="<%=user.lastname %> ">  
-    <input type="email" placeholder="Email" name="email" value="<%=user.email  %>">  
-<button type="submit">Update</button></form>
+    <form action="/updateuser" method="POST"> 
+        <input type="hidden" name="id" value="<%=user.id  %>">  
+        <table class="tableform">
+            <tr>
+               
+                <td><label>First name</label></td>
+                <td><input type="text" placeholder="firstname" name="firstname" value="<%=user.firstname %> "></td>
+            </tr>
+
+            <tr>
+                <td><label>Last name</label></td>
+                <td><input type="text" placeholder="lastname" name="lastname" value="<%=user.lastname %> ">  </td>
+            </tr>
+
+            <tr>
+                <td><label>Email</label></td>
+                <td><input type="email" placeholder="Email" name="email" value="<%=user.email  %>"> </td>
+            </tr>
+        </table>
+
+        <input class="formsubmit" type="submit" value="Update"></input>
+
+
+    </form>
+
+
+
+</div>
+
+</body>

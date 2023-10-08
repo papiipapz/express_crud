@@ -9,42 +9,56 @@
 <body>
 
 
-<div id="table">
-  <table>
-    <thead> 
-      
-      <div id="userList">
-       <h1>User List</h1>
-      <p id="numUser">Number of Users: <%= userList.length %></p>
-    </div>
+  <div class="wrap">
+    <table>
+      <thead>
+        <div id="userList">
+          <h1>USER LIST</h1>
+          <p id="numUser">Number of Users: <%= userList.length %>
+          </p>
+        </div>
 
-      <a id="createUser" href="/insertuser"> Create User</a>
+        <div>
+          <a href="/insertuser">
+            <input type="submit" value="Create User">
+          </a>
+        </div>
 
-      <div id="tablecontent">
-      <tr>
-        <th>Email</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% userList.forEach((user) => { %>
-      <tr>
-        <td><%= user.email %></td>
-        <td><%= user.firstname %></td>
-        <td><%= user.lastname %></td>
-        <td><a href="/edituser/<%= user.id %>" class="edit-link">Edit</a></td>
-        <td><a href="/deleteuser/<%= user.id %>" class="edit-link">Delete</a></td>
-      </tr>
-      <% }) %>
-    </tbody>
+        <div id="tablecontent">
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th colspan="2">Edit users</th>
+
+          </tr>
+      </thead>
+      <tbody>
+        <% userList.forEach((user)=> { %>
+          <tr>
+            <td class="cell">
+              <%=user.id %>
+            </td>
+            <td class="cell">
+              <%= user.email %>
+            </td>
+            <td class="cell">
+              <%= user.firstname %>
+            </td>
+            <td class="cell">
+              <%= user.lastname %>
+            </td>
+            <td class="edit"><a href="/edituser/<%= user.id %>" class="edit-link">Update</a></td>
+            <td class="edit"><a href="/deleteuser/<%= user.id %>" class="edit-link">Delete</a></td>
+          </tr>
+          <% }) %>
+      </tbody>
   </div>
-
-
+  </div>
   </table>
-</div>    
+
+  </div>
 
 </body>
 
